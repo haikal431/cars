@@ -35,7 +35,7 @@ class AuthController extends Controller
               return redirect('/login');
             }
             
-            $request->session()->regenerate();
+            //$request->session()->regenerate();
             if(Auth::user()->role_id == 1){
                 return redirect('dashboard');
 
@@ -50,5 +50,18 @@ class AuthController extends Controller
         Session::flash('status', 'failed');
         Session::flash('message', 'Login invalid');
         return redirect('/login');
+    }
+
+    public function logout(Request $request) 
+    {
+        Auth::logout();
+        $request->session()->invalid();
+        $request->session()->regenerateToken();
+        return redirect('login');
+    }
+    
+    public function registerProcess(Reuired $request)
+    {
+        
     }
 }

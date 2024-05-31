@@ -40,7 +40,7 @@
             @csrf
             <div>
                 <label for="username" class="form-label">Username:</label>
-                <input type="text" name="username" id="username" class="form-control">
+                <input type="text" name="username" id="username" class="form-control" required>
             </div>
             <div>
                 <label for="password" class="form-label">Password:</label>
@@ -50,6 +50,7 @@
                 <button type="submit" class="btn btn-primary form-control">Login</button>
             </div>
             <div class="text-center">
+                register here friends->
                 <a href="register">Sign up</a>
             </div>
         </form>
